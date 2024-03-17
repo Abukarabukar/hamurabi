@@ -1,20 +1,20 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-// this seems to be an example of a solution that mimics the original BASIC code the author was writing from.
+//1 this seems to be an example of a solution that mimics the original BASIC code the author was writing from.
 //
 // it's a great example of Very Bad Java.
 // Do not write Java like this. If you do, do NOT tell people you went to Zip Code.
 // I'm serious.
 // (how the hell would you ever be able to TEST this piece of code?)
 //
-public class HAMURABI {
+public class NotHAMURABI {
 	static int totalDeaths = 0, percentDied = 0, year = 0, population = 95, stores = 2800, immigrants = 5, deaths,
-		harvest = 3000, yeild = 3, acres = harvest / yeild, eaten = harvest - stores, landPrice, fullPeople, temp;
+			harvest = 3000, yeild = 3, acres = harvest / yeild, eaten = harvest - stores, landPrice, fullPeople, temp;
 	static boolean plague = false;
 	final static String FINK = "DUE TO THIS EXTREME MISMANAGEMENT YOU HAVE NOT ONLY\n" +
-		"BEEN IMPEACHED AND THROWN OUT OF OFFICE BUT YOU HAVE\n" +
-		"ALSO BEEN DECLARED PERSONA NON GRATA!!\n";
+			"BEEN IMPEACHED AND THROWN OUT OF OFFICE BUT YOU HAVE\n" +
+			"ALSO BEEN DECLARED PERSONA NON GRATA!!\n";
 	Scanner input = new Scanner(System.in);
 
 	private void newYear() {
@@ -73,11 +73,11 @@ public class HAMURABI {
 		temp = (int) (Math.random() * 5 + 1);
 		if (temp % 2 != 1)
 			eaten = (stores / temp);
-		else 
+		else
 			eaten = 0;
 		stores += (harvest - eaten);
-		immigrants = (int) (Math.random() * 5 + 1) * 
-					(20 * acres + stores) / population / 100 + 1;
+		immigrants = (int) (Math.random() * 5 + 1) *
+				(20 * acres + stores) / population / 100 + 1;
 		if (population > fullPeople) {
 			deaths = population - fullPeople;
 			if (deaths > .45 * population)
@@ -90,7 +90,7 @@ public class HAMURABI {
 			plague = true;
 		plague = false;
 	}
-	
+
 	private static String report() {
 		String answer = "\nHAMURABI:  I BEG TO REPORT TO YOU,\n" +
 				"IN YEAR " + year + ", " + deaths + " PEOPLE STARVED, " + immigrants + " CAME TO THE CITY.\n";
@@ -107,25 +107,25 @@ public class HAMURABI {
 		return answer;
 	}
 
-	
+
 	private static void epicFail(int x) {
 		String reason = "";
 		switch (x) {
-		case 0: reason = "HAMURABI:  I CANNOT DO WHAT YOU WISH.\n" +
-			"GET YOURSELF ANOTHER STEWARD!!!!!"; break;
-		case 1: reason = "YOU STARVED " + deaths + " PEOPLE IN ONE YEAR!!!\n" +
-			FINK; break;
+			case 0: reason = "HAMURABI:  I CANNOT DO WHAT YOU WISH.\n" +
+					"GET YOURSELF ANOTHER STEWARD!!!!!"; break;
+			case 1: reason = "YOU STARVED " + deaths + " PEOPLE IN ONE YEAR!!!\n" +
+					FINK; break;
 		}
 		System.out.println(reason);
 		System.exit(0);
 	}
-	
+
 	private void finished() {
 		String answer = "IN YOUR 10-YEAR TERM OF OFFICE, " + percentDied + " PERCENT OF THE\n" +
-			"POPULATION STARVED PER YEAR ON AVERAGE, I.E., A TOTAL OF\n" +
-			totalDeaths + " PEOPLE DIED!!\n" +
-			"YOU STARTED WITH 10 ACRES PER PERSON AND ENDED WITH\n" +
-			acres / population + " ACRES PER PERSON\n\n";
+				"POPULATION STARVED PER YEAR ON AVERAGE, I.E., A TOTAL OF\n" +
+				totalDeaths + " PEOPLE DIED!!\n" +
+				"YOU STARTED WITH 10 ACRES PER PERSON AND ENDED WITH\n" +
+				acres / population + " ACRES PER PERSON\n\n";
 		if (percentDied > 33 || acres / population < 7)
 			answer += FINK;
 		else if (percentDied > 10 || acres / population < 9)
@@ -144,9 +144,9 @@ public class HAMURABI {
 		answer += "\n\n\n\n\n\n\n\n\n\nSo long for now.";
 		System.out.println(answer);
 	}
-	
+
 	public static void main(String[] args) throws IOException {
-		HAMURABI a = new HAMURABI();
+		NotHAMURABI a = new NotHAMURABI();
 		System.out.println("\t\t\t\tHAMURABI\n\t       CREATIVE COMPUTING MORRISTOWN, NEW JERSEY\n\n" +
 				"TRY YOUR HAND AT GOVERNING ANCIENT SUMERIA\nSUCCESSFULLY FOR A TEN-YEAR TERM OF OFFICE.");
 		while (year < 10)
