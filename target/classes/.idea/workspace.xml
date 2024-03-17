@@ -4,86 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a31d8724-cc34-4eda-90d9-3bca929551ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HammurabiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/HammurabiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/hamurabi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/matuszek/06-hammurabi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/matuszek/HammurabiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/matuszek/README..md" beforeDir="false" />
-    </list>
+    <list default="true" id="b9b086df-ad7e-45da-bb6b-bfd3fd064cae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2dnFoAkbSkvmMTOCIxKFJrwCja1" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.HAMURABI.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HammurabiTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/abukar/Projects/hamurabi&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="hammurabi.docs.matuszek" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/docs" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="NotHAMURABI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NotHAMURABI" />
+    <configuration name="Hammurabi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hammurabi.Hammurabi" />
       <module name="hamurabi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hammurabi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HammurabiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hamurabi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hammurabi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hammurabi" />
+      <option name="MAIN_CLASS_NAME" value="hammurabi.HammurabiTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HammurabiTest.testAskHowManyAcresToOrBuySell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hamurabi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hammurabi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hammurabi" />
+      <option name="MAIN_CLASS_NAME" value="hammurabi.HammurabiTest" />
+      <option name="METHOD_NAME" value="testAskHowManyAcresToOrBuySell" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NotHAMURABI" />
+        <item itemvalue="JUnit.HammurabiTest" />
+        <item itemvalue="JUnit.HammurabiTest.testAskHowManyAcresToOrBuySell" />
+        <item itemvalue="Application.Hammurabi" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a31d8724-cc34-4eda-90d9-3bca929551ac" name="Changes" comment="" />
-      <created>1710636107229</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1710636107229</updated>
-    </task>
     <servers />
   </component>
 </project>
