@@ -20,16 +20,16 @@ public class HammurabiTest {
     }
 
     @Test
-    public void testAskHowManyAcresToOrBuySell() {
+    public void testNumberOfPeopleSurvived() {
         Hammurabi hammurabi = new Hammurabi();
 
-        int expectedAcresOwned = 1000;
-        int input = 10;
+        int expectedNumberPeople = 10;
+     int input = 200;
 
 
-        int actualAcresOwned = hammurabi.howManyAcresToOrBuySell();
+        int actualAcresOwned = hammurabi.feedPeople(input);
 
-        assertEquals(expectedAcresOwned + input, actualAcresOwned);
+        assertEquals(expectedNumberPeople, actualAcresOwned);
     }
 
 
