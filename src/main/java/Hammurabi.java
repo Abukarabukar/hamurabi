@@ -1,4 +1,5 @@
 
+
 package hammurabi;               // package declaration
 
 import java.nio.file.LinkPermission;
@@ -28,7 +29,7 @@ public class Hammurabi {
     public static void main(String[] args) {
         new Hammurabi().startGameMessage();
         new Hammurabi().playGame();
-
+       ;
     }
 
     //constrcutor
@@ -49,35 +50,16 @@ public class Hammurabi {
 
 //            }
 
-            int acresToBuyOrSell = howManyAcresToOrBuySell();
 
-            if (acresToBuyOrSell >= 0) {
-                // Buying acres
-                int totalLandValue = landValue * acresToBuyOrSell;
-                if (totalLandValue <= bushelsInStorage) {
-                    int bushelspaied = acresToBuyOrSell * landValue;
-                    acresOwned += acresToBuyOrSell;
-                    bushelsInStorage -= totalLandValue;
-                    System.out.println("You bought " + acresToBuyOrSell + " acres at price of " + bushelspaied + " bushel \n Your bushel: " + bushelsInStorage + "\n Your acres: " + acresOwned );
-                } else {
-                    System.out.println("Not enough bushels in storage to buy the desired acres.");
-                }
+                year();
 
-            } else {
-                // Selling acres
-                int acresToSell = Math.abs(acresToBuyOrSell);
-                if (acresToSell <= acresOwned) {
-                    int bushelsReceived = acresToSell * landValue;
-                    bushelsInStorage += bushelsReceived;
-                    acresOwned -= acresToSell; // Corrected subtraction
-                    System.out.println("You sold " + acresToSell + " acres and received " + bushelsReceived + " bushels.");
+            System.out.println("How many acres do you wish to buy or sell? Enter a negative amount to sell acres or a positive amount to buy acres.");
+            int collector = scanner.nextInt();
 
-                } else {
-                    System.out.println("You don't have enough acres to sell.");
-                    acresOwned -= acresToSell;
-                }
+            int acresToBuyOrSell = howManyAcresToOrBuySell(collector);
 
-            }
+
+
 
 
             System.out.println("How many bushels you want to feed this poor people. Each one of them needs 20 bushels. Yeh they are fat");
@@ -102,35 +84,50 @@ public class Hammurabi {
 //
 
 
-            if (year == 10) {
+            if (year == 2) {
                 isOn = false; // Terminate the loop after 10 years
             }
             year++;
         }
+        report();
     }
 
 
 
-    public int newCostOfLand() {
-        return 0;
-    }
+//    public int newCostOfLand() {
+//        return 0;
+//    }
 
 
 
-    public int howManyAcresToOrBuySell() {
-        int input;
-        while (true) {
-            System.out.println("How many acres do you wish to buy or sell? Enter a negative amount to sell acres or a positive amount to buy acres.");
-            try {
-                input = scanner.nextInt();
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number.");
-                input = scanner.nextInt();
+    public int howManyAcresToOrBuySell(int collector) {
+        if (collector >= 0) {
+            // Buying acres
+            int totalLandValue = landValue * collector;
+            if (totalLandValue <= bushelsInStorage) {
+                int bushelspaied = collector * landValue;
+                acresOwned += collector;
+                bushelsInStorage -= totalLandValue;
+                System.out.println("You bought " + collector + " acres at price of " + bushelspaied + " bushel \n Your bushel: " + bushelsInStorage + "\n Your acres: " + acresOwned );
+            } else {
+                System.out.println("Not enough bushels in storage to buy the desired acres.");
+            }
+
+        } else {
+            // Selling acres
+            int acresToSell = Math.abs(collector);
+            if (acresToSell <= acresOwned) {
+                int bushelsReceived = acresToSell * landValue;
+                bushelsInStorage += bushelsReceived;
+                acresOwned -= acresToSell; // Corrected subtraction
+                System.out.println("You sold " + acresToSell + " acres and received " + bushelsReceived + " bushels." + "\n Your bushel: " + bushelsInStorage + "\n Your acres: " + acresOwned );
+
+            } else {
+                System.out.println("You don't have enough acres to sell.");
+                acresOwned -= acresToSell;
             }
         }
-
-        return input;
+        return acresOwned;
     }
 
 //    public int howManyAcresToBuy() {
@@ -165,6 +162,8 @@ public class Hammurabi {
 //        return choice;
 //    }
 
+    int totalPeopleStarved = 0;
+int peopleStarved = 0;
     int feedPeople(int input) {
         int bushelForPeople = input;
         int amoutPeopleFood = 20;
@@ -172,24 +171,24 @@ public class Hammurabi {
 
         if (bushelsInStorage > 0){
 //
-                  if (amoutPeopleFood == (people * 20)){
-                      bushelsInStorage -= bushelForPeople;
-                  }
-                  else if (amoutPeopleFood != (people * 20)){
-                      int peopleAfterFed = (bushelForPeople / personNeeds);
-                      int peopleStarved = people - peopleAfterFed;
-                      bushelsInStorage -= bushelForPeople;
-                      people -= peopleStarved;
-                      System.out.println("Number of people Starved " + peopleStarved + " \n People: " + people + "\n Your bushel: " + bushelsInStorage + "\n Your acres: " + acresOwned );
+            if (amoutPeopleFood == (people * 20)){
+                bushelsInStorage -= bushelForPeople;
+            }
+            else if (amoutPeopleFood != (people * 20)){
+                int peopleAfterFed = (bushelForPeople / personNeeds);
+                peopleStarved = people - peopleAfterFed;
+                bushelsInStorage -= bushelForPeople;
+                people -= peopleStarved;
+                totalPeopleStarved += peopleStarved;
+                System.out.println("In the previous year " + peopleStarved + " people starved to death. " + " \n People: " + people + "\n Your bushel: " + bushelsInStorage + "\n Your acres: " + acresOwned );
 
-
-
-
-                  }
+            }
         }
         return people;
 
     }
+
+
     void startGameMessage() {
         System.out.println("O great Hammurabi!\n" +
                 "You are in year 1 of your ten year rule.\n" +
@@ -200,6 +199,18 @@ public class Hammurabi {
                 "Rats destroyed 200 bushels, leaving 2800 bushels in storage.\n" +
                 "The city owns 1000 acres of land.\n" +
                 "Land is currently worth 19 bushels per acre.\n");
+    }
+
+
+    void year(){
+        System.out.println("You are in a Year: " + year);
+    }
+
+    void report (){
+        System.out.println("Under your rule " + totalPeopleStarved + " starved to death. \n" +
+                "They are " + people +  " people in you kingdom. \n " +
+                "You have " + bushelsInStorage +" bushels. \n" +
+                "You own " + acresOwned +  " acres.");
     }
 }
 
@@ -216,6 +227,7 @@ public class Hammurabi {
 //howmanypeolple 12 / oldvalue = 8
 
 // systems.out.print (howmanypeopledie);
+
 
 
 

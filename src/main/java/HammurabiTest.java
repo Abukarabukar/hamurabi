@@ -24,13 +24,55 @@ public class HammurabiTest {
         Hammurabi hammurabi = new Hammurabi();
 
         int expectedNumberPeople = 10;
-     int input = 200;
+        int input = 200;
 
 
-        int actualAcresOwned = hammurabi.feedPeople(input);
+        int actualPeopleSurvived = hammurabi.feedPeople(input);
 
-        assertEquals(expectedNumberPeople, actualAcresOwned);
+        assertEquals(expectedNumberPeople, actualPeopleSurvived);
     }
+
+    @Test
+    public void testNumberOfPeopleStarved() {
+        Hammurabi hammurabi = new Hammurabi();
+        int numberOfPeople = 100;
+        int expectedNumberPeople = 90;
+        int input = 200;
+
+
+        int actualPeopleSurvived = hammurabi.feedPeople(input);
+
+        assertEquals(expectedNumberPeople, numberOfPeople - actualPeopleSurvived);
+    }
+
+    @Test
+    public void testBuyAcres() {
+        Hammurabi hammurabi = new Hammurabi();
+
+        int expectedAcres = 1002;
+        int input = 2;
+
+
+        int actualAcresOwned = hammurabi.howManyAcresToOrBuySell(input);
+
+        assertEquals(expectedAcres, actualAcresOwned);
+    }
+
+    @Test
+    public void testSellAcres() {
+        Hammurabi hammurabi = new Hammurabi();
+
+        int expectedAcres = 950;
+        int input = -50;
+
+
+        int actualAcresOwned = hammurabi.howManyAcresToOrBuySell(input);
+
+        assertEquals(expectedAcres, actualAcresOwned);
+    }
+
+
+
 
 
 //    @Test
@@ -80,3 +122,4 @@ public class HammurabiTest {
     public void newCostOfLand() {
     }
 }
+
